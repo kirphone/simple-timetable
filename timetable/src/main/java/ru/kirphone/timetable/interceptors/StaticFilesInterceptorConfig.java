@@ -17,7 +17,7 @@ public class StaticFilesInterceptorConfig implements WebMvcConfigurer {
         WebContentInterceptor interceptor = new WebContentInterceptor();
         interceptor.addCacheMapping(CacheControl.maxAge(31536000, TimeUnit.SECONDS)
                 .noTransform()
-                .mustRevalidate(), "/static/fonts/*");
+                .mustRevalidate(), "/static/**");
         registry.addInterceptor(interceptor);
     }
 }
